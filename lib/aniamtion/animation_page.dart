@@ -12,26 +12,19 @@ class _AnimationPageState extends State<AnimationPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Container(
-        width: 300,
-        height: 300,
-        color: Colors.red,
-        child: AnimatedSwitcher(
-          transitionBuilder: (child, animation) {
-            return ScaleTransition(
-                scale: animation,
-                child: FadeTransition(
-                  opacity: animation,
-                  child: child,
-                ));
-          },
-          duration: const Duration(seconds: 2),
-          child: Text(
-            "hellow3",
-            key: UniqueKey(),
-            style: TextStyle(fontSize: 100),
-          ),
-        ),
+      child: TweenAnimationBuilder(
+        tween: Tween(begin: Offset(0, 50), end: Offset(0, 200)),
+        duration: const Duration(seconds: 2),
+        builder: (BuildContext context, Offset value, Widget? child) {
+          return Transform.translate(
+            offset: value,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.blue,
+            ),
+          );
+        },
       ),
     ));
   }
