@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/aniamtion/animation_page.dart';
+import 'package:flutter_demo/aniamtion/number_pick_animation_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: const AnimationPage(),
+      home: const NumPickAnimationPage(),
     );
   }
 }
